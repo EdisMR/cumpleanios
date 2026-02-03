@@ -159,11 +159,10 @@ footer{
 
 @media screen and (orientation: portrait) {
 	.card{
-		scale: 1.1;
 		left: 52%;
 	}
 	footer{
-		font-size: 40px;
+		font-size: 18px;
 	}
 	.card .details{
 		font-size: 19px;
