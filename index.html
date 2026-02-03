@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Feliz Cumpleaños Melany</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: #f6d365;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: linear-gradient(135deg, #7fa2ec 0%, #7fa2ec 15%, #ec8962 25%, #61c7b6 50%, #9ae782 75%, #fda085 100%);
+			background-size: 800% 800%;
+			animation: gradientBG 15s ease infinite;
+			user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+		}
+
+		@keyframes gradientBG {
+			0% {
+				background-position: 0% 50%;
+			}
+
+			50% {
+				background-position: 100% 50%;
+			}
+
+			100% {
+				background-position: 0% 50%;
+			}
+		}
+
+		#cumple-cake {
+			overflow: visible;
+			position: relative;
+			top: 100px;
+			z-index: 1;
+			filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
+			margin: 0 auto;
+			transform: scale(1.7);
+		}
+
+		#cumple-cake-container {
+			position: relative;
+			width: 100vw;
+			height: 70vh;
+			overflow: hidden !important;
+			padding-top: 50px;
+		}
+
+		#curve-svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2;
+		}
+
+		.cake-layer {
+			filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
+		}
+
+		.layer-body {
+			fill: #f8f9fa;
+			stroke: #e9ecef;
+			stroke-width: 2;
+		}
+
+		.layer-top {
+			fill: #ffffff;
+		}
+
+		.icing {
+			fill: #ffdae0;
+		}
+
+		.cake-text {
+			font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
+			fill: #d63384;
+			text-anchor: middle;
+			font-weight: bold;
+			z-index: 100000;
+		}
+
+		.candle-body {
+			fill: #ffffff;
+			stroke: #e9ecef;
+			stroke-width: 1;
+		}
+
+		.wick {
+			fill: none;
+			stroke: #555;
+			stroke-width: 2;
+		}
+
+		.flame-main {
+			fill: #ffdb58;
+		}
+
+		.flame-inner {
+			fill: #ff6b6b;
+		}
+
+		.particle {
+			fill: #ffd700;
+		}
+
+		@media (min-width: 1200px) {
+			#cumple-cake-container {
+				height: 80vh;
+				width: 30vw;
+				padding-top: 100px;
+			}
+
+			#cumple-cake {
+				transform: scale(1.5);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="cumple-cake-container">
+
+		<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" id="cumple-cake">
+			<defs>
+				<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+					<feGaussianBlur stdDeviation="4" result="coloredBlur" />
+					<feMerge>
+						<feMergeNode in="coloredBlur" />
+						<feMergeNode in="SourceGraphic" />
+					</feMerge>
+				</filter>
+			</defs>
+
+			<g class="cake-layer layer-1" transform="translate(-1000, 0)">
+				<path class="layer-body"
+					d="M250,600 L250,500 C250,472.386 317.157,450 400,450 C482.843,450 550,472.386 550,500 L550,600 C550,627.614 482.843,650 400,650 C317.157,650 250,627.614 250,600 Z" />
+				<ellipse class="layer-top" cx="400" cy="500" rx="150" ry="50" />
+			</g>
+
+			<g class="cake-layer layer-2" transform="translate(1000, 0)">
+				<path class="layer-body"
+					d="M275,500 L275,420 C275,392.386 330.964,370 400,370 C469.036,370 525,392.386 525,420 L525,500 C525,527.614 469.036,550 400,550 C330.964,550 275,527.614 275,500 Z" />
+				<ellipse class="layer-top" cx="400" cy="420" rx="125" ry="50" />
+				<text class="cake-text" x="400" y="510" font-size="18">FELIZ CUMPLEAÑOS</text>
+			</g>
+
+			<g class="cake-layer layer-3" transform="translate(-1000, 0)">
+				<path class="layer-body"
+					d="M300,420 L300,350 C300,322.386 344.772,300 400,300 C455.228,300 500,322.386 500,350 L500,420 C500,447.614 455.228,470 400,470 C344.772,470 300,447.614 300,420 Z" />
+				<ellipse class="layer-top" cx="400" cy="350" rx="100" ry="50" />
+				<text class="cake-text" x="400" y="430" font-size="30">MELANY</text>
+			</g>
+
+			<g class="cake-layer layer-4" transform="translate(1000, 0)">
+				<path class="layer-body"
+					d="M325,350 L325,290 C325,262.386 358.579,240 400,240 C441.421,240 475,262.386 475,290 L475,350 C475,377.614 441.421,400 400,400 C358.579,400 325,377.614 325,350 Z" />
+				<ellipse class="layer-top" cx="400" cy="290" rx="75" ry="40" />
+				<path class="icing"
+					d="M325,290 C325,310 340,320 350,310 C360,300 370,330 385,320 C400,310 415,330 430,320 C445,310 460,300 475,290 L475,290 C475,268 441.421,240 400,240 C358.579,240 325,268 325,290 Z" />
+			</g>
+
+			<g class="candle-container" transform="translate(0, -700)">
+				<rect class="candle-body" x="390" y="180" width="20" height="80" rx="2" />
+				<path class="wick" d="M400,180 L400,165" />
+
+				<g class="flame-group" opacity="0" transform="translate(395, 125) scale(0)">
+					<path class="flame-main" d="M0,0 Q-10,-15 0,-40 Q10,-15 0,0 Z" filter="url(#glow)" />
+					<path class="flame-inner" d="M0,0 Q-5,-10 0,-25 Q5,-10 0,0 Z" />
+				</g>
+
+				<g class="particles-group" opacity="0" transform="translate(400, 165)">
+					<circle class="particle p1" r="3" cx="0" cy="0" />
+					<circle class="particle p2" r="2" cx="0" cy="0" />
+					<circle class="particle p3" r="3" cx="0" cy="0" />
+					<circle class="particle p4" r="2" cx="0" cy="0" />
+					<circle class="particle p5" r="3" cx="0" cy="0" />
+					<circle class="particle p6" r="2" cx="0" cy="0" />
+				</g>
+			</g>
+		</svg>
+	</div>
+
+	<style>
+		path {
+			fill: transparent;
+		}
+
+		text {
+			fill: #ffffff;
+			font-size: 17px;
+			font-weight: bold;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, Roboto, sans-serif;
+		}
+
+		footer {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, Roboto, sans-serif;
+			font-size: 15px;
+			color: white;
+		}
+
+		@media (min-width: 1200px) {
+			footer {
+				font-size: 18px;
+			}
+		}
+	</style>
+	<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" id="curve-svg">
+		<path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+		<text width="500">
+			<textPath xlink:href="#curve">
+				Iniciando nueva órbita al rededor del sol... 🚀
+			</textPath>
+		</text>
+	</svg>
+
+	<footer>
+		@EdisMR
+	</footer>
+
+	<script>
+		window.addEventListener('load', () => {
+			const tl = gsap.timeline({ defaults: { ease: "back.out(1.4)", duration: 0.8 } });
+
+			tl.to(".layer-1", { x: 0 })
+				.to(".layer-2", { x: 0 }, "-=0.5")
+				.to(".layer-3", { x: 0 }, "-=0.5")
+				.to(".layer-4", { x: 0 }, "-=0.5")
+
+				// Vela cae
+				.to(".candle-container", {
+					y: 0,
+					ease: "bounce.out",
+					duration: 1.5
+				})
+
+				// Encendido
+				.to(".flame-group", {
+					opacity: 1,
+					scale: 1,
+					duration: 0.4,
+					ease: "power2.out"
+				})
+				// Animación de la llama
+				.to(".flame-group", {
+					scale: 1.1,
+					yoyo: true,
+					repeat: -1,
+					duration: 0.6,
+					ease: "sine.inOut"
+				}, "<")
+
+				// Explosión de partículas
+				.to(".particles-group", { opacity: 1, duration: 0.1 }, "<")
+				.to(".p1", { x: -30, y: -30, opacity: 0, duration: 0.6 }, "<")
+				.to(".p2", { x: 30, y: -30, opacity: 0, duration: 0.7 }, "<")
+				.to(".p3", { x: -40, y: 10, opacity: 0, duration: 0.5 }, "<")
+				.to(".p4", { x: 40, y: 10, opacity: 0, duration: 0.8 }, "<")
+				.to(".p5", { x: 0, y: -50, opacity: 0, duration: 0.6 }, "<")
+				.to(".p6", { x: 0, y: -40, opacity: 0, duration: 0.7 }, "<");
+		});
+	</script>
+
+</body>
+
+</html>
