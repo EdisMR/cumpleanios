@@ -41,14 +41,31 @@
 	</footer>
 
 	<script>
+		var cardOpen = false
+
 		function openCard() {
 			document.querySelector('.card').classList.add('rotate-card')
 			document.querySelector('.card .imgBox').classList.add('imgBoxOpen')
 			document.querySelector('.card .bark').classList.add('barkOpen')
 		}
 
+		function closeCard() {
+			document.querySelector('.card').classList.remove('rotate-card')
+			document.querySelector('.card .imgBox').classList.remove('imgBoxOpen')
+			document.querySelector('.card .bark').classList.remove('barkOpen')
+		}
+
+		function toggleCard() {
+			if (cardOpen) {
+				closeCard()
+			} else {
+				openCard()
+			}
+		}
+
 		document.querySelector('.card').addEventListener('click', () => {
-			openCard()
+			toggleCard()
+			cardOpen = !cardOpen
 		})
 
 		window.setTimeout(() => {
