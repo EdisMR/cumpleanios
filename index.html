@@ -29,7 +29,8 @@
 			<h4 class="color2">FELIZ CUMPLEAÑOS MELANY!</h2>
 				<!--h4 class="color2 margin"></h3> -->
 				<p></p>En este día tan especial te deseo un cumpleaños lleno de amor, alegría y momentos que
-				llenen tu corazón de felicidad. Eres una persona maravillosa y ha sido un gusto conocerte. Agradezco a Dios tu felicidad y te deseo muchas bendiciones. Que sea un día maravilloso junto a amigos y familia.
+				llenen tu corazón de felicidad. Eres una persona maravillosa y ha sido un gusto conocerte. Agradezco a
+				Dios tu felicidad y te deseo muchas bendiciones. Que sea un día maravilloso junto a amigos y familia.
 				<p class="text-right">¡Se te quiere!</p>
 				<p class="text-right">De Edis ♥</p>
 		</div>
@@ -38,6 +39,23 @@
 	<footer>
 		@EdisMR
 	</footer>
+
+	<script>
+		function openCard() {
+			document.querySelector('.card').classList.add('rotate-card')
+			document.querySelector('.card .imgBox').classList.add('imgBoxOpen')
+			document.querySelector('.card .bark').classList.add('barkOpen')
+		}
+
+		document.querySelector('.card').addEventListener('click', () => {
+			openCard()
+		})
+
+		window.setTimeout(() => {
+			openCard()
+		}, 5000)
+
+	</script>
 
 </body>
 

@@ -63,8 +63,15 @@ h4 {
 	transition: 1s;
 }
 
+/* 
 .card:hover {
-	transform: translate(-50%, -50%) perspective(2000px) rotate(15deg) scale(1.2);
+	transform: translate(-50%, -50%) perspective(2000px) rotate(10deg) scale(1.2);
+	box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5), 0 10px 100px rgba(0, 0, 0, .5);
+} */
+
+
+.rotate-card {
+	transform: translate(-50%, -50%) perspective(2000px) rotate(10deg) scale(1.2);
 	box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5), 0 10px 100px rgba(0, 0, 0, .5);
 }
 
@@ -114,11 +121,19 @@ h4 {
 	max-height: 400px;
 }
 
-.card:hover .imgBox {
+/* .card:hover .imgBox {
+	transform: rotateY(-135deg);
+} */
+.imgBoxOpen {
 	transform: rotateY(-135deg);
 }
 
-.card:hover .bark {
+/* .card:hover .bark {
+	opacity: 1;
+	transition: .6s;
+	box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+} */
+.barkOpen {
 	opacity: 1;
 	transition: .6s;
 	box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
@@ -149,7 +164,7 @@ h4 {
 	text-align: right;
 }
 
-footer{
+footer {
 	position: fixed;
 	bottom: 0px;
 	width: 100%;
@@ -158,13 +173,15 @@ footer{
 }
 
 @media screen and (orientation: portrait) {
-	.card{
+	.card {
 		left: 52%;
 	}
-	footer{
+
+	footer {
 		font-size: 18px;
 	}
-	.card .details{
+
+	.card .details {
 		font-size: 19px;
 		margin-top: 10px;
 	}
